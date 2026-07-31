@@ -22,15 +22,9 @@ Simulace názorně ukazuje zejména to, že:
 
 ## Spuštění
 
-Nejjednodušší způsob je otevřít soubor [`index.html`](index.html) v aktuálním Chrome, Edge, Firefoxu nebo Safari. Na Windows jej lze otevřít dvojitým kliknutím.
+Aplikaci lze spustit online přes GitHub Pages na adrese [https://vrabczak.github.io/TailRotorLab/](https://vrabczak.github.io/TailRotorLab/).
 
-Volitelně lze aplikaci spustit přes lokální HTTP server, například:
-
-```powershell
-python -m http.server 8000
-```
-
-Poté otevřete [http://localhost:8000](http://localhost:8000). Aplikace nemá žádné externí závislosti ani krok sestavení.
+Nejjednodušší způsob je otevřít soubor [`index.html`](index.html) ve webovém prohlížeči. Na Windows jej lze otevřít dvojitým kliknutím.
 
 ## Návod k použití
 
@@ -113,7 +107,7 @@ Model vychází ze společného jmenovitého výkonu $P_{max}=4\,000$ metrickýc
 $$
 f_{eng}(h,T_C)=
 \begin{cases}
-1, & h\le h_{flat},\\[2mm]
+1, & h\le h_{flat},\\
 \dfrac{\rho(h,T_C)}{\rho(h_{flat},T_{ISA}(h_{flat}))}, & h>h_{flat}.
 \end{cases}
 $$
@@ -191,7 +185,7 @@ $$
 Úhel proudění a úhel náběhu listu jsou
 
 $$
-\phi=\operatorname{atan2}(U_p,U_t),
+\phi=\mathrm{atan2}(U_p,U_t),
 \qquad
 \alpha=\theta_{tr}-\phi.
 $$
@@ -201,7 +195,7 @@ Proto není geometrický úhel $\theta_{tr}$ totožný s aerodynamickým úhlem 
 V lineární oblasti je součinitel vztlaku profilu
 
 $$
-C_{l,lin}=\operatorname{clamp}\!\left[a(\alpha-\alpha_{0L}),C_{l,min},C_{l,max}\right],
+C_{l,lin}=\mathrm{clamp}\!\left[a(\alpha-\alpha_{0L}),C_{l,min},C_{l,max}\right],
 $$
 
 kde $a=5{,}7\ \mathrm{rad^{-1}}$, $\alpha_{0L}=-1{,}2^\circ$, $C_{l,min}=-1{,}2$ a $C_{l,max}=1{,}5$. Odporová polára je
@@ -248,7 +242,7 @@ Do kritického úhlu $\alpha_{crit}=12^\circ$ se používá lineární vztlakov�
 $$
 s(t)=3t^2-2t^3,
 \qquad
-t=\operatorname{clamp}\left(\frac{\alpha-\alpha_{crit}}{\alpha_{collapse}-\alpha_{crit}},0,1\right),
+t=\mathrm{clamp}\left(\frac{\alpha-\alpha_{crit}}{\alpha_{collapse}-\alpha_{crit}},0,1\right),
 $$
 
 $$
@@ -306,13 +300,13 @@ Tabulka pokrývá 0–10 m/s. Do 11,11 m/s pokračuje poslední známý sklon a 
 Vertikální rychlost vychází z přebytku výkonu:
 
 $$
-v_{target}=\operatorname{clamp}\left(\frac{P_{mr}-P_{hover}}{mg},-25,25\right).
+v_{target}=\mathrm{clamp}\left(\frac{P_{mr}-P_{hover}}{mg},-25,25\right).
 $$
 
 Model se k této rychlosti přibližuje s časovou konstantou $\tau=2{,}5\ \mathrm{s}$:
 
 $$
-\dot v=\operatorname{clamp}\left(\frac{v_{target}-v}{\tau},-4,4\right).
+\dot v=\mathrm{clamp}\left(\frac{v_{target}-v}{\tau},-4,4\right).
 $$
 
 Tento údaj je pouze energetický odhad stoupání nebo klesání; poloha vrtulníku se v prostoru nesimuluje.
