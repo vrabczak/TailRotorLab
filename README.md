@@ -88,7 +88,7 @@ Klávesové zkratky fungují, pokud kurzor není v editačním poli:
 
 ### Standardní atmosféra, teplota a hustota
 
-Standardní teplota ve výšce (h) a standardní tlak jsou počítány jako
+Standardní teplota ve výšce $h$ a standardní tlak jsou počítány jako
 
 $$
 T_{ISA}(h)=T_0-Lh,
@@ -98,7 +98,7 @@ $$
 p(h)=p_0\left(1-\frac{Lh}{T_0}\right)^{\frac{g}{R L}},
 $$
 
-kde (T_0=288{,}15\ \mathrm{K}), (L=0{,}0065\ \mathrm{K/m}), (g=9{,}80665\ \mathrm{m/s^2}) a (R=287{,}05287\ \mathrm{J/(kg\,K)}). Hustota vychází ze stavové rovnice ideálního plynu a používá zvolenou, nikoliv nutně standardní teplotu:
+kde $T_0=288{,}15\ \mathrm{K}$, $L=0{,}0065\ \mathrm{K/m}$, $g=9{,}80665\ \mathrm{m/s^2}$ a $R=287{,}05287\ \mathrm{J/(kg\,K)}$. Hustota vychází ze stavové rovnice ideálního plynu a používá zvolenou, nikoliv nutně standardní teplotu:
 
 $$
 \rho(h,T_C)=\frac{p(h)}{R(T_C+273{,}15)}.
@@ -108,7 +108,7 @@ Nižší hustota zmenšuje aerodynamické síly při stejné rychlosti listu a z
 
 ### Dostupný výkon motorů
 
-Model vychází ze společného jmenovitého výkonu (P_{max}=4\,000\) metrických koní, tedy přibližně (2{,}942\ \mathrm{MW}). Zjednodušený model inspirovaný motory TV3-117VM drží výkon konstantní do výšky (h_{flat}=3\,600\ \mathrm{m}), nad ní jej snižuje poměrem hustot:
+Model vychází ze společného jmenovitého výkonu $P_{max}=4\,000$ metrických koní, tedy přibližně $2{,}942\ \mathrm{MW}$. Zjednodušený model inspirovaný motory TV3-117VM drží výkon konstantní do výšky $h_{flat}=3\,600\ \mathrm{m}$, nad ní jej snižuje poměrem hustot:
 
 $$
 f_{eng}(h,T_C)=
@@ -118,7 +118,7 @@ f_{eng}(h,T_C)=
 \end{cases}
 $$
 
-Pro zvolenou polohu ovladače (u\in\langle0,1\rangle) je
+Pro zvolenou polohu ovladače $u\in\langle0,1\rangle$ je
 
 $$
 P_{available}=uP_{max}f_{eng}.
@@ -160,17 +160,17 @@ P_{0,mr}=\rho A_{mr}(\Omega_{mr}R_{mr})^3
 \frac{\sigma_{mr}\bar C_{d,mr}}{8}.
 $$
 
-Požadovaný výkon je omezen také kalibrovanou účinností (*figure of merit*, (FM)):
+Požadovaný výkon je omezen také kalibrovanou účinností (*figure of merit*, $FM$):
 
 $$
 P_{req,mr}(T)=\max\left(P_{i,mr}+P_{0,mr},\frac{P_{ideal,mr}}{FM_{mr,ref}}\right).
 $$
 
-Simulace numericky hledá takový tah (T_{mr}), pro který se požadovaný výkon rovná výkonu dostupnému hlavnímu rotoru. Referenční bod odpovídá přibližně 14 000 kgf OGE nosnosti při plném výkonu na hladině moře.
+Simulace numericky hledá takový tah $T_{mr}$, pro který se požadovaný výkon rovná výkonu dostupnému hlavnímu rotoru. Referenční bod odpovídá přibližně 14 000 kgf OGE nosnosti při plném výkonu na hladině moře.
 
 ### Proudění a listový model ocasního rotoru
 
-Ocasní rotor má tři listy, poloměr (R_{tr}=1{,}954\ \mathrm{m}), otáčky 1 120 rpm a aerodynamický kořenový výřez do (0{,}2R). Rotor je rozdělen na 12 radiálních a 24 azimutálních vzorků. Výsledky se průměrují za celou otáčku.
+Ocasní rotor má tři listy, poloměr $R_{tr}=1{,}954\ \mathrm{m}$, otáčky 1 120 rpm a aerodynamický kořenový výřez do $0{,}2R$. Rotor je rozdělen na 12 radiálních a 24 azimutálních vzorků. Výsledky se průměrují za celou otáčku.
 
 Rychlost vzduchu vůči náboji zahrnuje vítr i pohyb náboje způsobený otáčením vrtulníku:
 
@@ -180,7 +180,7 @@ $$
 
 Toto je důležitá zpětná vazba: již vzniklá rychlost otáčení změní místní proudění, úhel náběhu a následně tah ocasního rotoru.
 
-Pro element ve vzdálenosti (r) a azimutu (\beta) jsou tangenciální a kolmá složka relativní rychlosti
+Pro element ve vzdálenosti $r$ a azimutu $\beta$ jsou tangenciální a kolmá složka relativní rychlosti
 
 $$
 U_t=\Omega_{tr}r-V_{plane,t},
@@ -196,7 +196,7 @@ $$
 \alpha=\theta_{tr}-\phi.
 $$
 
-Proto není geometrický úhel (\theta_{tr}) totožný s aerodynamickým úhlem náběhu (\alpha).
+Proto není geometrický úhel $\theta_{tr}$ totožný s aerodynamickým úhlem náběhu $\alpha$.
 
 V lineární oblasti je součinitel vztlaku profilu
 
@@ -204,13 +204,13 @@ $$
 C_{l,lin}=\operatorname{clamp}\!\left[a(\alpha-\alpha_{0L}),C_{l,min},C_{l,max}\right],
 $$
 
-kde (a=5{,}7\ \mathrm{rad^{-1}}), (\alpha_{0L}=-1{,}2^\circ), (C_{l,min}=-1{,}2) a (C_{l,max}=1{,}5). Odporová polára je
+kde $a=5{,}7\ \mathrm{rad^{-1}}$, $\alpha_{0L}=-1{,}2^\circ$, $C_{l,min}=-1{,}2$ a $C_{l,max}=1{,}5$. Odporová polára je
 
 $$
 C_d=C_{d,0}+k_dC_l^2.
 $$
 
-Pro velikost relativní rychlosti (W=\sqrt{U_t^2+U_p^2}) vzniknou na elementu šířky (dr) síly
+Pro velikost relativní rychlosti $W=\sqrt{U_t^2+U_p^2}$ vzniknou na elementu šířky $dr$ síly
 
 $$
 dL=\frac12\rho W^2c_{tr}C_l\,dr,
@@ -239,11 +239,11 @@ v_i=\sqrt{\frac{\max(T_{tr},0)}{2\rho A_{tr}}},
 \qquad A_{tr}=\pi R_{tr}^2.
 $$
 
-Protože tah závisí na (v_i) a (v_i) současně závisí na tahu, aplikace používá sedm relaxovaných iterací. Potřebný výkon dále zahrnuje indukovanou složku, profilový odpor, ztrátu na konci listů a kalibrační ztrátu tak, aby účinnost ocasního rotoru nepřekročila (FM_{tr,max}=0{,}52).
+Protože tah závisí na $v_i$ a $v_i$ současně závisí na tahu, aplikace používá sedm relaxovaných iterací. Potřebný výkon dále zahrnuje indukovanou složku, profilový odpor, ztrátu na konci listů a kalibrační ztrátu tak, aby účinnost ocasního rotoru nepřekročila $FM_{tr,max}=0{,}52$.
 
 ### Ztráta účinnosti ocasního rotoru (zjednodušené LTE)
 
-Do kritického úhlu (\alpha_{crit}=12^\circ) se používá lineární vztlaková charakteristika. Nad kritickým úhlem je součinitel vztlaku plynule redukován pomocí funkce
+Do kritického úhlu $\alpha_{crit}=12^\circ$ se používá lineární vztlaková charakteristika. Nad kritickým úhlem je součinitel vztlaku plynule redukován pomocí funkce
 
 $$
 s(t)=3t^2-2t^3,
@@ -255,7 +255,7 @@ $$
 C_l=C_l(\alpha_{crit})\left[1-s(t)(1-f_{post})\right],
 $$
 
-kde (\alpha_{collapse}=19^\circ) a po úplném rozvinutí poklesu zůstává (f_{post}=0{,}18) původního vztlaku. Stav se klasifikuje následovně:
+kde $\alpha_{collapse}=19^\circ$ a po úplném rozvinutí poklesu zůstává $f_{post}=0{,}18$ původního vztlaku. Stav se klasifikuje následovně:
 
 - **Normal:** žádný vzorek nepřekročil 12°;
 - **LTE onset:** kritický úhel překročilo méně než 20 % vzorků;
@@ -265,7 +265,7 @@ Jde pouze o názorný model lokálního odtržení proudění. Skutečná LTE (*
 
 ### Moment ocasního rotoru a potřebný tah
 
-Ocasní rotor je ve vzdálenosti (L_{tr}=12{,}748\ \mathrm{m}) od těžiště. Jeho moment je
+Ocasní rotor je ve vzdálenosti $L_{tr}=12{,}748\ \mathrm{m}$ od těžiště. Jeho moment je
 
 $$
 Q_{tr}=-T_{tr}L_{tr}.
@@ -281,7 +281,7 @@ Rozdíl mezi touto hodnotou a skutečným tahem určuje, zda se nezahrnutím tlu
 
 ### Aerodynamický moment větru na trup
 
-Boční složka větru (V_y) působí na zjednodušenou boční plochu trupu:
+Boční složka větru $V_y$ působí na zjednodušenou boční plochu trupu:
 
 $$
 F_{wind,y}=\frac12\rho C_{d,y}A_yV_y|V_y|,
@@ -291,11 +291,11 @@ $$
 Q_{wind}=x_{cp}F_{wind,y},
 $$
 
-kde (C_{d,y}=1), (A_y=25\ \mathrm{m^2}) a střed tlaku leží (x_{cp}=-1{,}2\ \mathrm{m}) za těžištěm. Kvadratický člen zachová znaménko směru a současně vytváří obvyklou závislost síly na druhé mocnině rychlosti. Jde o souhrnný korouhvičkový model, nikoliv detailní výpočet jednotlivých částí trupu a ocasních ploch.
+kde $C_{d,y}=1$, $A_y=25\ \mathrm{m^2}$ a střed tlaku leží $x_{cp}=-1{,}2\ \mathrm{m}$ za těžištěm. Kvadratický člen zachová znaménko směru a současně vytváří obvyklou závislost síly na druhé mocnině rychlosti. Jde o souhrnný korouhvičkový model, nikoliv detailní výpočet jednotlivých částí trupu a ocasních ploch.
 
 ### Vliv směru větru na OGE výkon
 
-Vedle přímého působení větru na trup a ocasní rotor používá model digitizovanou korekci mezní hmotnosti visu ve výšce 20 m z grafu pro Mi-8MTV-5-1. Korekce (\Delta G) je tabulkově určena pro přední, boční a zadní vítr, mezi rychlostmi a směry se interpoluje. Kladná hodnota zlepšuje podmínky visu:
+Vedle přímého působení větru na trup a ocasní rotor používá model digitizovanou korekci mezní hmotnosti visu ve výšce 20 m z grafu pro Mi-8MTV-5-1. Korekce $\Delta G$ je tabulkově určena pro přední, boční a zadní vítr, mezi rychlostmi a směry se interpoluje. Kladná hodnota zlepšuje podmínky visu:
 
 $$
 G_{equiv}=G-\Delta G.
@@ -309,7 +309,7 @@ $$
 v_{target}=\operatorname{clamp}\left(\frac{P_{mr}-P_{hover}}{mg},-25,25\right).
 $$
 
-Model se k této rychlosti přibližuje s časovou konstantou (\tau=2{,}5\ \mathrm{s}):
+Model se k této rychlosti přibližuje s časovou konstantou $\tau=2{,}5\ \mathrm{s}$:
 
 $$
 \dot v=\operatorname{clamp}\left(\frac{v_{target}-v}{\tau},-4,4\right).
@@ -331,7 +331,7 @@ $$
 Q_{damping}=-c_1\omega-c_2\omega|\omega|,
 $$
 
-kde (c_1=1\,200\ \mathrm{N\,m\,s/rad}) a (c_2=1\,000\ \mathrm{N\,m\,s^2/rad^2}). Celkový moment a úhlové zrychlení jsou
+kde $c_1=1\,200\ \mathrm{N\,m\,s/rad}$ a $c_2=1\,000\ \mathrm{N\,m\,s^2/rad^2}$. Celkový moment a úhlové zrychlení jsou
 
 $$
 Q_{net}=Q_{mr}+Q_{tr}+Q_{wind}+Q_{damping},
@@ -339,7 +339,7 @@ Q_{net}=Q_{mr}+Q_{tr}+Q_{wind}+Q_{damping},
 \dot\omega=\frac{Q_{net}}{I_z}.
 $$
 
-Stav se integruje explicitním Eulerovým krokem (\Delta t=1/120\ \mathrm{s}):
+Stav se integruje explicitním Eulerovým krokem $\Delta t=1/120\ \mathrm{s}$:
 
 $$
 \omega_{k+1}=\omega_k+\dot\omega_k\Delta t,
@@ -349,7 +349,7 @@ $$
 \psi_{k+1}=\psi_k+\omega_{k+1}\Delta t.
 $$
 
-Ovladač **Angular Momentum** tedy fyzikálně představuje (I_z), nikoliv moment hybnosti (L=I_z\omega). Při změně hmotnosti se zachová zvolené rozložení hmoty pomocí vztahu
+Ovladač **Angular Momentum** tedy fyzikálně představuje $I_z$, nikoliv moment hybnosti $L=I_z\omega$. Při změně hmotnosti se zachová zvolené rozložení hmoty pomocí vztahu
 
 $$
 I_{z,1}=I_{z,0}\frac{m_1}{m_0}.

@@ -104,6 +104,14 @@
       align-items: center;
       min-width: 0;
       gap: 14px;
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .brand:focus-visible {
+      outline: 2px solid var(--teal);
+      outline-offset: 5px;
+      border-radius: 8px;
     }
 
     .brand-mark {
@@ -1023,6 +1031,15 @@
       gap: 4px;
     }
 
+    .app-footer a {
+      color: var(--teal);
+      text-underline-offset: 3px;
+    }
+
+    .app-footer a:hover {
+      color: #8be6d8;
+    }
+
     .error-banner {
       display: none;
       margin-bottom: 16px;
@@ -1382,13 +1399,13 @@
 <body>
   <main class="app">
     <header class="app-header">
-      <div class="brand">
+      <a class="brand" href="https://github.com/vrabczak/TailRotorLab" aria-label="Tail Rotor Lab project homepage on GitHub">
         <div class="brand-mark" aria-hidden="true"><span></span></div>
         <div>
           <h1>Tail Rotor Lab</h1>
           <p class="subtitle">Explore how torque, wind, and yaw reshape tail-rotor thrust.</p>
         </div>
-      </div>
+      </a>
       <div class="header-actions" aria-label="Simulation controls">
         <button id="pauseButton" class="button primary" type="button" aria-pressed="false">Start</button>
         <button id="resetButton" class="button" type="button">Reset</button>
@@ -1840,6 +1857,7 @@
       <div class="app-footer-copy">
         <p>Simplified educational LTE approximation. Real LTE also depends on aircraft-specific aerodynamic interactions, not one universal blade angle.</p>
         <p>All data used in this application comes from publicly available sources.</p>
+        <p>Project homepage: <a href="https://github.com/vrabczak/TailRotorLab">vrabczak/TailRotorLab</a></p>
       </div>
       <span>Clockwise main rotor · viewed from above</span>
     </footer>
